@@ -65,14 +65,11 @@ a {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-div {
-  display: flex;
-  align-items: center;
-}
-
-.nav {
   display: flex;
   align-items: center;
 }
@@ -98,6 +95,11 @@ a {
   color: #2e2f42;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -112,6 +114,12 @@ a {
   line-height: 1.5;
   letter-spacing: 0.32px;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-new {
+  position: relative;
+  color: #404bbf;
 }
 
 .nav-list-item:hover,
@@ -119,21 +127,33 @@ a {
   color: #404bbf;
 }
 
+.nav-new:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+
 .contacts {
   margin-left: auto;
   font-style: normal;
 }
 
-.contacts-item {
+.contacts-list-item {
   color: #434455;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts-item-link:hover,
-.contacts-item-link:focus {
+.contacts-list-item:hover,
+.contacts-list-item:focus {
   color: #404bbf;
 }
 
@@ -145,6 +165,7 @@ a {
   background-color: #2e2f42;
   padding-bottom: 188px;
   padding-top: 188px;
+  max-width: 1440px;
   background-image: linear-gradient(
       to bottom,
       rgba(46, 47, 66, 0.7),
@@ -153,7 +174,7 @@ a {
     url(../images/main-section-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1440рх;
+  background-size: cover;
 }
 
 .main-title {
@@ -182,6 +203,7 @@ a {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   margin: 0 auto;
   min-width: 169px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-button:hover,
@@ -210,15 +232,14 @@ a {
 }
 
 .about-us-icon-div {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
   border-radius: 4px;
   border: 1px solid #8e8f99;
   background-color: #f4f4fd;
-}
-
-.about-us-icon {
-  margin-left: 100px;
-  max-width: 100%;
+  margin-bottom: 8px;
 }
 
 .about-us-subtitle {
@@ -272,10 +293,6 @@ a {
 
 .team-card {
   padding: 32px 0;
-  border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .our-team-names {
@@ -306,16 +323,24 @@ a {
 }
 
 .soc-item {
-}
-
-.soc-list-icon {
   width: 40px;
   height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.soc-item-link {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .soc-list-icon:hover,
 .soc-list-icon:focus {
-  fill: #31d0aa;
+  fill: #f4f4fd;
 }
 
 /*=========================================*/
@@ -346,10 +371,7 @@ a {
 
 .portfolio-list-item {
   width: calc((100% - 48px) / 3);
-
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-delay: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item:hover,
@@ -421,7 +443,11 @@ a {
 
 .footer-flex {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
+}
+
+.footer-list {
+  margin-right: 120px;
 }
 
 .web-footer {
@@ -445,7 +471,7 @@ a {
   background-color: #2e2f42;
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02em;
   display: block;
   max-width: 264px;
 }
@@ -455,7 +481,7 @@ a {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   color: #ffffff;
 }
 /*=========================================*/
